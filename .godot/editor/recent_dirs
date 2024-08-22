@@ -1,3 +1,7 @@
+res://assets/theme
+res://stages/levels/UI
+res://stages/ui/menu
+res://stages/levels/3D
+res://entities/3D/box
 res://stages/levels
 res://globals
-res://stages/ui/menu

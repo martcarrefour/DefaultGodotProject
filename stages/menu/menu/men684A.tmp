@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgnrhwk1ruque"]
+
+[ext_resource type="Script" path="res://stages/ui/menu/menu.gd" id="1_24x04"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_24x04")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.955473, 0.990052, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Start2D" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Start3D" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start2D" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start3D" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

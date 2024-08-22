@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://1tib5cdnto5i"]
+
+[ext_resource type="Texture2D" uid="uid://i1rub6wh6beh" path="res://assets/kenny-prototype-textures/texture_01.svg" id="1_tvw1u"]
+[ext_resource type="PackedScene" uid="uid://budrhaxe413yi" path="res://entities/3D/box/box_3d.tscn" id="2_pqgqe"]
+[ext_resource type="PackedScene" uid="uid://ceqfdigfeufmw" path="res://entities/3D/character_3d/character_3d.tscn" id="3_aqh4u"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhxxo"]
+sky_top_color = Color(0.328723, 0.561865, 0.68642, 1)
+sky_horizon_color = Color(0.831806, 0.859596, 0.826319, 1)
+ground_bottom_color = Color(0.998501, 0.87652, 0.618856, 1)
+ground_horizon_color = Color(0.831806, 0.859596, 0.826319, 1)
+
+[sub_resource type="Sky" id="Sky_64oqn"]
+sky_material = SubResource("ProceduralSkyMaterial_hhxxo")
+
+[sub_resource type="Environment" id="Environment_c3too"]
+background_mode = 2
+sky = SubResource("Sky_64oqn")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkpi5"]
+albedo_texture = ExtResource("1_tvw1u")
+uv1_triplanar = true
+uv2_triplanar = true
+
+[node name="Level3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c3too")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(500, 1, 500)
+material = SubResource("StandardMaterial3D_mkpi5")
+metadata/_edit_lock_ = true
+
+[node name="Box3D" parent="." instance=ExtResource("2_pqgqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Character3D" parent="." instance=ExtResource("3_aqh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 7)

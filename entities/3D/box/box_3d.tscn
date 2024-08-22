@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://budrhaxe413yi"]
+
+[ext_resource type="Texture2D" uid="uid://xhckcdmbsd0s" path="res://assets/kenny-prototype-textures/texture_02.svg" id="1_3rxoy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kk4vy"]
+albedo_texture = ExtResource("1_3rxoy")
+uv1_triplanar = true
+uv2_triplanar = true
+
+[node name="Box3D" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_kk4vy")

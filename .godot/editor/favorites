@@ -1,0 +1,6 @@
+res://globals/events.gd
+res://globals/globals.gd
+res://stages/levels/2D/level_2d.tscn
+res://stages/levels/3D/level_3d.tscn
+res://stages/levels/UI/level_ui.tscn
+res://stages/menu/menu/menu.tscn

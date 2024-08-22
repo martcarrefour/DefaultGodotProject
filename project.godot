@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="DefaultGodotProject"
-run/main_scene="res://stages/levels/level_1.tscn"
+config/name="_"
+run/main_scene="res://stages/menu/menu/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -26,15 +26,19 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
-window/size/viewport_width=144
-window/size/viewport_height=256
-window/size/window_width_override=576
-window/size/window_height_override=1024
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=960
+window/size/window_height_override=540
 window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/gdscript_formatter/plugin.cfg")
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/gdscript_formatter/plugin.cfg")
+
+[gui]
+
+theme/custom="res://assets/theme/default.tres"
 
 [input]
 

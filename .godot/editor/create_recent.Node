@@ -1,6 +1,14 @@
+Camera3D
+CollisionShape3D
+CSGMesh3D
+CharacterBody3D
+CSGBox3D
+MeshInstance3D
+Sprite2D
+CollisionShape2D
+CharacterBody2D
 ColorRect
 VBoxContainer
 HBoxContainer
 Button
 MarginContainer
-CanvasLayer
